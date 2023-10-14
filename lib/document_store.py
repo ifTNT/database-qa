@@ -50,7 +50,8 @@ class DocumentStore:
     with open(Path(path)/DocumentStore.config_filename, 'w') as f:
       json.dump(config, f)
 
-  def load(self, path:str):
+  @classmethod
+  def load(cls, path:str):
     """
     Load constructed document store from local filesystem.
     """
@@ -59,10 +60,10 @@ class DocumentStore:
     with open(Path(path)/DocumentStore.config_filename, 'r') as f:
       config = json.load(f)
 
-    self.embedding_model_name = config['embedding_name']
-    self._load_embedding_model(self.embedding_model_name)
-    self.vector_store = FAISS.load_local(path, self.embedding_model)
-    self.logger.info('Document store loaded.')
+    embedding_model_name = config['embedding_name']
+    store = cls(embedding_model_name)
+    store.vector_store = FAISS.load_local(path, store.embedding_model)
+    return store
 
   def as_retriever(self,
                search_type:str='mmr',

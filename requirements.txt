@@ -1,5 +1,6 @@
 langchain
 torch
+accelerate
 transformers
 sentence-transformers
 textract
@@ -7,3 +8,5 @@ textract
 faiss-cpu
 tqdm
 python-dotenv
+jinja2
+simsimd

@@ -10,7 +10,7 @@ DBQA is an application that utilizes Retrieval-Augmented Generation (RAG) to ans
 ### For Ubuntu
 
 ```bash
-apt-get install python-dev libxml2-dev libxslt1-dev antiword unrtf poppler-utils pstotext
+apt-get install python-dev-is-python3 libxml2-dev libxslt1-dev antiword unrtf poppler-utils pstotext
 pip install textract
 ```
 
