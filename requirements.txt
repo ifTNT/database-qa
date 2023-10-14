@@ -1,0 +1,9 @@
+langchain
+torch
+transformers
+sentence-transformers
+textract
+# faiss-gpu
+faiss-cpu
+tqdm
+python-dotenv
