@@ -34,7 +34,7 @@ class ChatTuple:
     @classmethod
     def from_chat_history(cls, chat_history: [BaseMessage]):
         """
-        Convert a list of BaseMessages to a list o ChatTuple.
+        Convert a list of BaseMessages to a list of ChatTuple.
         Noticed that it's expected that a bot message is an immediate successor of a user message.
         """
         chat_tuples = []
@@ -94,6 +94,9 @@ class StopOnTokens(StoppingCriteria):
         return False
 
 class TaideChatModel(SimpleChatModel):
+    """
+    LangChain-compatible ChatModel for TAIDE.
+    """
 
     @property
     def _llm_type(self) -> str:
