@@ -1,5 +1,6 @@
 import logging
 import json
+from typing import Tuple, List
 from pathlib import Path
 from langchain.docstore.document import Document
 from langchain.embeddings import HuggingFaceEmbeddings
@@ -38,6 +39,13 @@ class DocumentStore:
     """
     
     self.vector_store = FAISS.from_documents(docs, self.embedding_model)
+  
+  def from_embeddings(self, text_embeddings: [Tuple[str, List[float]]]):
+    """
+    Construct document store from text-embedding pairs
+    """
+    
+    self.vector_store = FAISS.from_embeddings(text_embeddings, self.embedding_model)
 
   def save(self, path:str):
     """

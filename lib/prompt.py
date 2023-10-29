@@ -1,7 +1,7 @@
 from langchain.prompts import PromptTemplate
 from langchain.docstore.document import Document
 
-RAG_PROMPT_TEMPLATE = """請以以下內容為基礎，回答問題。
+RAG_PROMPT_TEMPLATE = """請以以下文件內容為基礎，回答問題。必要時於回答最後附上參考資料。
 
 {% for doc in context %}{{doc.page_content}}
 
