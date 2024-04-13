@@ -1,4 +1,5 @@
 langchain
+langchain-community
 torch
 accelerate
 transformers
@@ -10,3 +11,4 @@ tqdm
 python-dotenv
 jinja2
 simsimd
+trafilatura

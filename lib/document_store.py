@@ -3,8 +3,8 @@ import json
 from typing import Tuple, List
 from pathlib import Path
 from langchain.docstore.document import Document
-from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.vectorstores import FAISS
+from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_community.vectorstores import FAISS
 from langchain.schema.vectorstore import VectorStoreRetriever
 
 class DocumentStore:
@@ -14,7 +14,7 @@ class DocumentStore:
 
   config_filename = 'config.json'
 
-  def __init__(self, embedding_model_name = 'infgrad/stella-base-zh'):
+  def __init__(self, embedding_model_name = 'thenlper/gte-base-zh'):
     """
     Initialize the document store.
     embedding_model: The sentence-transformers pre-trained model
